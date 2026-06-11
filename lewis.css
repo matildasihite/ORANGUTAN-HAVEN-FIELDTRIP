@@ -1,0 +1,197 @@
+:root {
+            --primary: #2d5a27; /* Forest Green */
+            --secondary: #a67c52; /* Earth Brown */
+            --bg: #fdfaf5; /* Cream Bone */
+            --text: #2c2c2c;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+ /* NAVIGATION */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgb(233, 228, 228);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: black;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-orange);
+        }
+
+                .meta-info { font-size: 0.85rem; margin-bottom: 15px; color: #666; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .meta-info b { color: var(--primary-green); }
+
+
+        /* Hero Section */
+        header {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url("https://cdn1-production-images-kly.akamaized.net/w-qvFBCBhIKstvitBOk46P-Ap5s=/640x360/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/4647579/original/053550400_1699930994-WhatsApp_Image_2023-11-14_at_09.47.22.jpeg");
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        /* Stats Section */
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: -50px;
+            padding: 0 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            min-width: 150px;
+        }
+
+        .stat-card h3 {
+            color: var(--secondary);
+            margin: 0;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .stat-card p {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin: 5px 0 0;
+        }
+
+        /* Content Section */
+        section {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 60px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .feature-grid img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 15px 15px 0px var(--primary);
+        }
+
+        .feature-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        /* Quote Section */
+        .quote {
+            background-color: var(--primary);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            margin: 100px 0;
+        }
+
+        .quote blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: #eeebe6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(166, 124, 82, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .feature-grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 2.5rem; }
+            .feature-grid img { order: 2; }
+        }

@@ -1,0 +1,351 @@
+
+        :root {
+            --primary-green: #2d5a27;
+            --earth-brown: #5d4037;
+            --accent-orange: #e67e22;
+            --light-bg: #fdfcf8;
+            --text-dark: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgb(233, 228, 228);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: black;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-orange);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url("https://www.orang-utans-in-not.org/wp-content/uploads/2022/03/orangutan-haven_sumatra_luftbild-1024x506.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* MAIN CONTENT - FORM SECTION */
+        .container {
+            max-width: 1000px;
+            margin: -50px auto 50px;
+            background: white;
+            padding: 40px;
+            
+            display: flex;
+            justify-content: center;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h5,
+        .section-title h4 {
+            margin: 10px;
+            color: var(--primary-green);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* FORM STYLING */
+        .registration-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            position: fixed;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        label {
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--earth-brown);
+        }
+
+        input, select, textarea {
+            padding: 12px 15px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--primary-green);
+            outline: none;
+            background-color: #f9fbf9;
+        }
+
+
+        /* DATA TABLE PREVIEW */
+        .data-preview {
+            margin-top: 50px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th {
+            background: #f4f7f4;
+            color: var(--primary-green);
+            text-align: left;
+            padding: 15px;
+            border-bottom: 2px solid var(--primary-green);
+        }
+
+        table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary-green);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .registration-form {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* PROFILE GRID */
+        .grid-profiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover { transform: translateY(-10px); }
+
+        /* GAMBAR PROFIL */
+        .profile-img-wrapper {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            background: #eee;
+        }
+
+        .profile-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .profile-card:hover img { transform: scale(1.05); }
+
+        .card-content { padding: 25px; }
+
+        .card-content h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary-green); margin-bottom: 10px; }
+
+        .gender-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            background: var(--earth-brown);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .condition-box {
+            background: #fff3e0;
+            color: #e65100;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent-orange);
+        }
+
+        .meta-info { font-size: 0.85rem; margin-bottom: 15px; color: #666; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .meta-info b { color: var(--primary-green); }
+
+        .story-text { font-size: 0.9rem; color: #444; text-align: justify; line-height: 1.6; }
+
+
+
+/* CARD INFORMATION */
+.info-card {
+    width: 80%;
+    margin: 30px auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid #ddd;
+}
+
+/* BUTTON ADOPSI */
+.btn-adopsi {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: 2px solid #5a7cff;
+    color: #5a7cff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-adopsi:hover {
+    background: #5a7cff;
+    color: white;
+}
+
+
+
+        .btn-submit {
+            grid-column: span 2;
+            background: var(--primary-green);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.4s;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background: var(--accent-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(230, 126, 34, 0.3);
+        }
+
+
+
+
+
+        /* LIST NAMA */
+.list-nama {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    background: #ccc;
+    border-radius: 10px;
+
+}
+
+.list-nama li {
+    margin: 10px 0;
+}
+
+.list-nama a {
+    display: block;
+    white-space: nowrap;
+    padding: 8px 0;
+    text-decoration: none;
+    color: #5a7cff;
+    font-weight: bold;
+}
